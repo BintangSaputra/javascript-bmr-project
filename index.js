@@ -1,10 +1,10 @@
+let kiloGram = document.getElementById("weight");
+let height = document.getElementById("height");
+let age = document.getElementById("age");
+console.log(kiloGram);
 const resultBmr = () => {
-  let kiloGram = document.getElementById("weight").value;
-  let height = document.getElementById("height").value;
-  let age = document.getElementById("age").value;
-  console.log(kiloGram);
-
-  const valueBmr = 88.362 + 13.397 * kiloGram + 4.799 * height - 5.677 * age;
+  const valueBmr =
+    88.362 + 13.397 * kiloGram.value + 4.799 * height.value - 5.677 * age.value;
   return (document.getElementById("result").value = Math.round(valueBmr));
 };
 
