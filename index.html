@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="index.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="index.css" />
+
     <title>Javascript-BMR</title>
   </head>
   <body>
+    <h1 class="title">Calory Calculator</h1>
     <div class="container">
       <div class="row">
         <div class="col-sm">
@@ -76,10 +78,20 @@
             <option value="veryActive" id="act4"> very Active</option>
           </select>
 
-          <button onclick="activityBMR()">calculate</button>
+          <button onclick="activityBMR()" class="btn btn-primary">
+            calculate
+          </button>
+
           <form action="">
-            result:
-            <input id="resultActivity" type="text" name="BMRtotalResult" />
+            <div class="form-group">
+              <label for="activityResult">Calories</label>
+              <input
+                id="resultActivity"
+                type="text"
+                name="BMRtotalResult"
+                class="form-control"
+              />
+            </div>
           </form>
         </div>
       </div>
