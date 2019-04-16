@@ -5,31 +5,39 @@ console.log(kiloGram);
 const resultBmr = () => {
   const valueBmr =
     88.362 + 13.397 * kiloGram.value + 4.799 * height.value - 5.677 * age.value;
-  return (document.getElementById("result").value = Math.round(valueBmr));
+  document.getElementById("result").value = Math.round(valueBmr);
+  return Math.round(valueBmr);
+};
+const activityBMR = () => {
+  // const notActive = document.getElementById("act1");
+  let activity = 0;
+
+  const selectedActivity = document.querySelector("#activities").value;
+
+  if (selectedActivity == "notActive") {
+    activity = resultBmr() * 1.2;
+  }
+  if (selectedActivity == "lightlyActive") {
+    activity = resultBmr() * 1.375;
+  }
+  if (selectedActivity == "Active") {
+    activity = resultBmr() * 1.55;
+  }
+  if (selectedActivity == "veryActive") {
+    activity = resultBmr() * 1.725;
+  }
+
+  return (document.getElementById("resultActivity").value = Math.round(
+    activity
+  ));
 };
 
-// console.log(Math.round(resultBmr(kiloGram, height, age)));
-
-// const notActive = resultBmr * 1.2;
-// const lightlyActive = resultBmr * 1.375;
-// const active = resultBmr * 1.55;
-// const veryActive = resultBmr * 1.725;
-
-// const activity = `How active are you?
-// 1: not active
-// 2: lightly active
-// 3: active
-// 4: very active
-// `;
-
-// if (activity == 1) {
-//   alert(notActive);
-// } else if (activity == 2) {
-//   alert(lightlyActive);
-// } else if (activity == 3) {
-//   alert(active);
-// } else {
-//   alert(veryActive);
-// }
-
-// console.log(Math.round(activity));
+// const activityBMRResult = () => {
+//   const valueNotActive = resultBmr * 1.2;
+//   const valueLightlyActive = resultBmr * 1.375;
+//   const valueActive = resultBmr * 1.55;
+//   const valueVeryActive = resultBmr * 1.725;
+//   return (document.getElementById("resultActivity").value = Math.round(
+//     activityBMRResult
+//   ));
+// };
